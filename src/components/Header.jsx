@@ -1,24 +1,22 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
-import { Btn } from './ui/Btn';
+import React from "react";
+import { NavLink } from "react-router-dom";
+import { Btn } from "./ui/Btn";
 
 const Header = () => {
   const navItems = [
-    { name: "Home", path: "/" },
-    { name: "Sessions", path: "/sessions" },
-    { name: "Hackathons", path: "/hackathons" },
-    { name: "HR Network", path: "/hrnetwork" },
-    { name: "AI Help", path: "/aihelp/college" },
+    { name: "Home",          path: "/" },
+    { name: "Sessions",      path: "/sessions" },
+    { name: "Hackathons",    path: "/hackathons" },
+    { name: "HR Network",    path: "/hrnetwork" },
+    { name: "AI Help",       path: "/aihelp" },
+    { name: "Resume Upload", path: "/resumeupload" },  
   ];
 
   return (
     <header className="bg-background/80 backdrop-blur border-b border-border sticky top-0 z-10 shadow-sm">
       <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
-          <NavLink
-            to="/"
-            className="text-2xl font-bold text-primary hover:text-primary/90 transition-colors"
-          >
+          <NavLink to="/" className="text-2xl font-bold text-primary hover:text-primary/90 transition-colors">
             HR Meetup
           </NavLink>
 
@@ -38,6 +36,7 @@ const Header = () => {
                 {name}
               </NavLink>
             ))}
+
             <Btn
               variant="ghost"
               size="sm"

@@ -46,10 +46,9 @@ const Home = ({ className = "" }) => {
 
     return (
         <div className={`min-h-screen bg-background ${className}`}>
-            {/* Navigation */}
-            
+          
 
-            {/* Hero Section */}
+           
             <div className="bg-gradient-to-r from-primary to-primary/80 text-primary-foreground">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-28">
                     <div className="text-center">
@@ -77,7 +76,6 @@ const Home = ({ className = "" }) => {
                 </div>
             </div>
 
-            {/* Features Section */}
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
                 <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
                     {features.map((feature, index) => {
@@ -99,7 +97,7 @@ const Home = ({ className = "" }) => {
                 </div>
             </section>
 
-            {/* Hackathon Section */}
+         
             <section className="bg-muted/50 py-20">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-12">
