@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Upload, FileText } from 'lucide-react';
-import { Btn } from '../ui/Btn';
+import { Btn } from './components/ui/Btn';
 
 const ResumeUpload = () => {
   const [files, setFiles] = useState([]);
