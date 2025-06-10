@@ -25,7 +25,7 @@ const App = () => {
           <Route path="/hrnetwork" element={<HRNetwork />} />
 
           {/* Nested routing for AIHelp */}
-          <Route path="/aihelp" element={<AIHelp />}>
+          <Route path="aihelp/college" element={<AIHelp />}>
             <Route path="college" element={<CollegeSuggestions />} />
             <Route path="company" element={<CompanySuggestions />} />
             <Route path="career" element={<CareerPath />} />
