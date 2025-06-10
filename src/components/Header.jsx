@@ -17,7 +17,7 @@ const Header = () => {
             <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div className="flex h-16 items-center justify-between">
                     <NavLink to="/" className="text-2xl font-bold text-primary hover:text-primary/90 transition-colors">
-                        HR Meetup
+                        RefeRing
                     </NavLink>
 
                     <div className="hidden md:flex md:items-center md:space-x-6">
