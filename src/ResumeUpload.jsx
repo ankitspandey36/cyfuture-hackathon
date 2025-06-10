@@ -1,55 +1,50 @@
-import React, { useState } from 'react';
-import { Upload, FileText } from 'lucide-react';
-import { Btn } from './components/ui/Btn';
+import React, { useState } from "react";
+import { UploadCloud, FileSearch } from "lucide-react";
 
 const ResumeUpload = () => {
-  const [files, setFiles] = useState([]);
+  const [hrFile, setHrFile] = useState(null);
+  const [userFile, setUserFile] = useState(null);
 
-  const handleFileChange = (e) => {
-    const uploadedFiles = Array.from(e.target.files);
-    setFiles(prev => [...prev, ...uploadedFiles]);
-  };
+  const handleHRUpload = (e) => setHrFile(e.target.files[0]);
+  const handleUserUpload = (e) => setUserFile(e.target.files[0]);
+
+  const submitHR = () => alert(`HR uploaded: ${hrFile?.name}`);
+  const submitUser = () => alert(`User uploaded: ${userFile?.name}`);
 
   return (
-    <div className="max-w-3xl mx-auto p-6 bg-white border border-border rounded-lg shadow-md">
-      <h2 className="text-2xl font-bold mb-4 text-foreground">Upload Resumes</h2>
-      <p className="text-sm text-muted-foreground mb-6">
-        HRs can upload candidate resumes in PDF or DOCX format to start filtering.
-      </p>
+    <div className="max-w-4xl mx-auto mt-10 space-y-10 px-4">
+      <h1 className="text-3xl font-bold text-center text-primary mb-6">Resume Services</h1>
 
-      <label className="block mb-4">
-        <input
-          type="file"
-          accept=".pdf,.doc,.docx"
-          multiple
-          onChange={handleFileChange}
-          className="hidden"
-          id="resumeUpload"
-        />
-        <div className="flex items-center justify-center border-2 border-dashed border-primary/50 p-8 rounded-lg cursor-pointer hover:border-primary transition">
-          <Upload className="w-6 h-6 text-primary mr-2" />
-          <span className="text-primary font-medium">Click to Upload Resumes</span>
+      {/* Section: HR Upload */}
+      <div className="border rounded-2xl p-6 shadow bg-background space-y-4">
+        <div className="flex items-center gap-2 text-xl font-semibold text-muted-foreground">
+          <UploadCloud className="w-5 h-5 text-primary" />
+          Upload Resumes for Filtering (HR)
         </div>
-      </label>
+        <input type="file" onChange={handleHRUpload} className="mt-2" />
+        {hrFile && <p className="text-sm text-green-600">Selected: {hrFile.name}</p>}
+        <button
+          onClick={submitHR}
+          className="bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded transition"
+        >
+          Upload & Filter
+        </button>
+      </div>
 
-      {files.length > 0 && (
-        <div className="mt-6">
-          <h3 className="text-lg font-semibold mb-2 text-foreground">Uploaded Resumes:</h3>
-          <ul className="space-y-2">
-            {files.map((file, idx) => (
-              <li key={idx} className="flex items-center text-sm text-muted-foreground">
-                <FileText className="w-4 h-4 mr-2 text-primary" />
-                {file.name}
-              </li>
-            ))}
-          </ul>
+      {/* Section: Individual Resume Check */}
+      <div className="border rounded-2xl p-6 shadow bg-background space-y-4">
+        <div className="flex items-center gap-2 text-xl font-semibold text-muted-foreground">
+          <FileSearch className="w-5 h-5 text-primary" />
+          Check Your Resume (Individual)
         </div>
-      )}
-
-      <div className="mt-6">
-        <Btn size="sm" className="hover:shadow-md">
-          Filter Candidates
-        </Btn>
+        <input type="file" onChange={handleUserUpload} className="mt-2" />
+        {userFile && <p className="text-sm text-blue-600">Selected: {userFile.name}</p>}
+        <button
+          onClick={submitUser}
+          className="bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded transition"
+        >
+          Analyze Resume
+        </button>
       </div>
     </div>
   );
