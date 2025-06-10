@@ -26,7 +26,7 @@ const App = () => {
 
           {/* Nested routing for AIHelp */}
           <Route path="aihelp" element={<AIHelp />}>
-            <Route path="aihelp" element={<CollegeSuggestions />} />
+            <Route path="college" element={<CollegeSuggestions />} />
             <Route path="company" element={<CompanySuggestions />} />
             <Route path="career" element={<CareerPath />} />
           </Route>
